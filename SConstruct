@@ -12,15 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
-
 # -----------------------------------------------------------------------------
 # Set environment
 # -----------------------------------------------------------------------------
 env=Environment(CPPPATH = '',
                 CPPDEFINES = [],
                 LIBS = [ 'pthread' ],
-                CXX = os.environ.get('CXX', 'g++'),
                 CXXFLAGS = "-std=c++11")
 
 # -----------------------------------------------------------------------------
@@ -29,11 +26,17 @@ env=Environment(CPPPATH = '',
 
 # Default values
 DEFAULT_DEBUG = 0 # Debugging off
+DEFAULT_COMPILER = 'g++'
 
 # Debug flag
 debug = ARGUMENTS.get('debug', DEFAULT_DEBUG)
 if int(debug):
    env.Append(CXXFLAGS = ' -g')
+
+# Compiler flag
+compiler = ARGUMENTS.get('cxx', DEFAULT_COMPILER)
+env.Replace(CXX = compiler)
+print("Using compiler: " + compiler)
 
 # -----------------------------------------------------------------------------
 # Build example
