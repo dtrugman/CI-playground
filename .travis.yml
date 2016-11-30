@@ -21,6 +21,7 @@ matrix:
         env: COMPILER=clang++-3.6
 
 script:
-  - echo ${COMPILER}
-  - scons cxx=${COMPILER}
+  - echo $CXX
+  - echo $COMPILER
+  - scons cxx=$COMPILER
   - ./Test.out
