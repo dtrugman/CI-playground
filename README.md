@@ -1,0 +1,1 @@
+![TravisCI](https://travis-ci.org/dtrugman/TravisCI-playground.svg?branch=master)
