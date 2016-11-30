@@ -27,5 +27,5 @@ before_install:
   - sudo apt-get install scons
 
 script:
-  - scons cxx=$COMPILER
+  - scons cxx=${COMPILER}
   - ./Test.out
