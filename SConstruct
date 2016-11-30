@@ -39,10 +39,10 @@ env.Replace(CXX = compiler)
 print("Using compiler: " + compiler)
 
 # -----------------------------------------------------------------------------
-# Build example
+# Build test
 # -----------------------------------------------------------------------------
-example_files = [ 'Example.cpp' ]
-example_app = 'Example.out'
+test_files = [ 'TestMain.cpp', 'Test.cpp' ]
+test_app = 'Test.out'
 
-env.Program(target = example_app,
-            source = example_files)
+env.Program(target = test_app,
+            source = test_files)
