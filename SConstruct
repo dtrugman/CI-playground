@@ -26,7 +26,7 @@ env=Environment(CPPPATH = '',
 
 # Default values
 DEFAULT_DEBUG = 0 # Debugging off
-DEFAULT_COMPILER = 'g++' # gcc
+DEFAULT_COMPILER = 'default'
 
 # Debug flag
 debug = ARGUMENTS.get('debug', DEFAULT_DEBUG)
@@ -35,8 +35,9 @@ if int(debug):
 
 # Compiler flag
 compiler = ARGUMENTS.get('cxx', DEFAULT_COMPILER)
+if (compiler != DEFAULT_COMPILER):
+    env.Replace(CXX = compiler)
 print("Using compiler: " + compiler)
-env.Replace(CXX = compiler)
 
 # -----------------------------------------------------------------------------
 # Build example
