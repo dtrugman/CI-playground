@@ -16,5 +16,6 @@ notifications:
   email: false
 
 script:
+  - echo $CXX
   - scons
   - ./Test.out
