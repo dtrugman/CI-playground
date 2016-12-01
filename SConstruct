@@ -28,8 +28,6 @@ print("Compiling on: " + platform)
 if platform == 'Linux':
     env.Append(LIBS = [ 'pthread' ])
     env.Append(CXXFLAGS = [ '-std=c++11' ])
-elif platform == 'Windows':
-    env.Append(CXXFLAGS = [ '-std=c++0x' ])
 
 # -----------------------------------------------------------------------------
 # Build flags
