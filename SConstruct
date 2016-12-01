@@ -42,7 +42,7 @@ print("Using compiler: " + compiler)
 # Build test
 # -----------------------------------------------------------------------------
 test_files = [ 'TestMain.cpp', 'Test.cpp' ]
-test_app = 'Test.out'
+test_app = 'Test'
 
 env.Program(target = test_app,
             source = test_files)
