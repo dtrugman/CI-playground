@@ -54,7 +54,7 @@ test_files = [ 'TestMain.cpp', 'Test.cpp' ]
 test_app = 'Test'
 
 test = env.Program(target = test_app,
-            source = test_files)
+                   source = test_files)
 
 test_alias = Alias('test', [test], test[0].abspath)
 AlwaysBuild(test_alias)
