@@ -10,7 +10,7 @@
 #---------------------------------#
 
 # version format
-version: 0.1.{$APPVEYOR_REPO_COMMIT}
+version: 0.1.$(APPVEYOR_REPO_COMMIT)
 
 # Maximum number of concurrent jobs for the project
 max_jobs: 1
