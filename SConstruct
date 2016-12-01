@@ -44,5 +44,8 @@ print("Compiling using: " + env['CXX'])
 test_files = [ 'TestMain.cpp', 'Test.cpp' ]
 test_app = 'Test'
 
-env.Program(target = test_app,
+test = env.Program(target = test_app,
             source = test_files)
+
+test_alias = Alias('test', [test], test[0].abspath)
+AlwaysBuild(test_alias)
