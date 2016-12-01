@@ -20,10 +20,13 @@ import platform
 env=Environment(CPPPATH = '',
                 CPPDEFINES = [],
                 LIBS = [],
-                CXXFLAGS = [ '-std=c++11' ])
+                CXXFLAGS = [])
 
 if platform.system() is 'Linux':
     env.Append(LIBS = [ 'pthread' ])
+    env.Append(CXXFLAGS = [ '-std=c++11' ])
+elif platform.system() is 'Windows':
+    env.Append(CXXFLAGS = [ '-std=c++0x' ])
 
 # -----------------------------------------------------------------------------
 # Build flags
