@@ -26,7 +26,6 @@ env=Environment(CPPPATH = '',
 
 # Default values
 DEFAULT_DEBUG = 0 # Debugging off
-DEFAULT_COMPILER = 'g++'
 
 # Debug flag
 debug = ARGUMENTS.get('debug', DEFAULT_DEBUG)
@@ -34,9 +33,10 @@ if int(debug):
    env.Append(CXXFLAGS = ' -g')
 
 # Compiler flag
-compiler = ARGUMENTS.get('cxx', DEFAULT_COMPILER)
-env.Replace(CXX = compiler)
-print("Using compiler: " + compiler)
+compiler = ARGUMENTS.get('cxx', "")
+if compiler:
+    env.Replace(CXX = compiler)
+print("Compiling using: " + compiler)
 
 # -----------------------------------------------------------------------------
 # Build test
