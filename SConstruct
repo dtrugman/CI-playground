@@ -18,7 +18,7 @@
 env=Environment(CPPPATH = '',
                 CPPDEFINES = [],
                 LIBS = [ 'pthread' ],
-                CXXFLAGS = "-std=c++11")
+                CXXFLAGS = [ '-std=c++11' ])
 
 # -----------------------------------------------------------------------------
 # Build flags
@@ -30,7 +30,7 @@ DEFAULT_DEBUG = 0 # Debugging off
 # Debug flag
 debug = ARGUMENTS.get('debug', DEFAULT_DEBUG)
 if int(debug):
-   env.Append(CXXFLAGS = ' -g')
+   env.Append(CXXFLAGS = [ '-g' ])
 
 # Compiler flag
 compiler = ARGUMENTS.get('cxx', "")
