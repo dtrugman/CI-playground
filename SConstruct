@@ -36,7 +36,7 @@ if int(debug):
 compiler = ARGUMENTS.get('cxx', "")
 if compiler:
     env.Replace(CXX = compiler)
-print("Compiling using: " + compiler)
+print("Compiling using: " + env['CXX'])
 
 # -----------------------------------------------------------------------------
 # Build test
