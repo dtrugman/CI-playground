@@ -22,10 +22,13 @@ env=Environment(CPPPATH = '',
                 LIBS = [],
                 CXXFLAGS = [])
 
-if platform.system() is 'Linux':
+platform = platform.system()
+print("Compiling on: " + platform)
+
+if platform == 'Linux':
     env.Append(LIBS = [ 'pthread' ])
     env.Append(CXXFLAGS = [ '-std=c++11' ])
-elif platform.system() is 'Windows':
+elif platform == 'Windows':
     env.Append(CXXFLAGS = [ '-std=c++0x' ])
 
 # -----------------------------------------------------------------------------
